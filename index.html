@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <section class="card-sec">
+      <div class="frontImge">
+        <img src="./images/card-logo.svg" alt="">
+        <div class="detailes">
+          <h2 id="carNumber">0000 0000 0000 0000</h2>
+          <div>
+            <span id="cardName">Jane Appleseed</span>
+            <span id="cardDate">
+              <span id="cardMnth">00</span>
+              /
+              <span id="cardYear">00</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="backImge">
+        <span id="cardCvc">000</span>
+      </div>
+    </section>
+    <section id="form-sec">
+      <form id="form" action="">
+        <div class="input-group">
+          <label > Cardholder Name</label>
+          <input type="text" placeholder="e.g. Jane Appleseed" id="formName">
+        </div>
+        <div class="input-group">
+          <label>Card Number</label>
+          <input type="text" placeholder="e.g. 1234 5678 9123 0000" id="formNumber">
+          <span id="numErro" class="erorr"></span>
+        </div>
+        <div class="last-group">
+          <div class="inputDate">
+            <label for="">Exp. Date (MM/YY)</label>
+            <div class="inputs">
+              <input type="text" placeholder="MM" id="formMnth">
+              <input type="text" placeholder="YY" id="formYear">
+            </div>
+            <span id="dateErro" class="erorr">cant be</span>
+          </div>
+          <div class="inputCVC">
+            <label for="">CVC</label>
+            <input type="text" placeholder="e.g. 123" maxlength="3" id="formCvc">
+            <span id="CVCErro" class="erorr">can't be blanck</span>
+          </div>
+        </div>
+        <button id="btn" type="submit">Confirm</button>
+      </form>
+      <div class="sucsses" id="succ">
+        <img src="./images/icon-complete.svg" alt="">
+        <h2>Thank you!</h2>
+        <p>We've added your card details</p>
+        <button id="continue" onclick="reload()">Continue</button>
+      </div>
+    </section>
+  </main>
+  <!-- Completed state start -->
+  <script src="./script.js"></script>
+</body>
+</html>

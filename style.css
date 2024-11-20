@@ -1,0 +1,291 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    text-transform: capitalize;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: var(--White);
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+
+
+main::before {
+    content: "";
+    position: absolute;
+    background-image: url(./images/bg-main-desktop.png);
+    left: 0;
+    top: 0;
+    /* background-position: center;
+    background-size: cover; */
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+
+}
+
+
+
+main .card-sec {
+    position: relative;
+    z-index: 999;
+    height:100%;
+    width:fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+main .card-sec .frontImge {
+    background-image: url(./images/bg-card-front.png);
+    width: 447px;
+    height:245px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--White);
+}
+
+
+main .card-sec .frontImge > img {
+    width: 60px;
+}
+
+main .card-sec .frontImge .detailes h2 {
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+main .card-sec .frontImge .detailes > div {
+    display: flex;
+}
+
+main .card-sec .frontImge .detailes #cardName {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+main .card-sec .frontImge .detailes #cardDate {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-left: auto;
+}
+
+main .card-sec .backImge {
+    background-image: url(./images/bg-card-back.png);
+    background-position: center;
+    background-size: contain;
+    width: 447px;
+    height:245px;
+    background-repeat: no-repeat;
+     transform: translateX(100px);
+     position: relative;
+}
+
+@media (max-width:768px) {
+    main {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    main::before  {
+        background-image: url(./images/bg-main-mobile.png);
+        width: 100%;
+        background-size: contain;
+    }
+
+    main .card-sec  {
+        width: 100%;
+        height: fit-content;
+        position: relative;
+        height: 40%;
+    }
+
+    main .card-sec .frontImge  {
+        width: 300px;
+        padding: 70px 10px;
+        left: 20px;
+        position: absolute;
+    }
+
+    
+    main .card-sec .frontImge h2 {
+        font-size: 17px;
+    }
+
+    main .card-sec .backImge {
+        width: 300px;
+        transform: translateX(0);
+        position: absolute;
+        z-index: -1;
+        top: -50px;
+        right: 20px;
+    }
+    
+}
+
+
+main .card-sec .backImge #cardCvc {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-55%) translateX(-55px);
+    color: var(--White);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+main #form-sec {
+    position: relative;
+    width: 300px;
+}
+
+main #form-sec form {
+   
+}
+
+main #form-sec .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+main #form-sec label {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--Very-dark-violet);
+}
+
+main #form-sec input {
+    border: 2px solid var(--Light-grayish-violet);
+    padding: 10px;
+    border-radius: 7px;
+    outline: 0;
+    color: var(--Very-dark-violet);
+    font-weight: 700;
+}
+
+main #form-sec .input-group input::placeholder {
+    color: var(--Light-grayish-violet);
+    font-size: 14px;
+}
+
+main #form-sec .last-group {
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+main #form-sec .last-group .inputDate {
+    width: 60%;
+}
+
+main #form-sec .last-group .inputDate {
+   position: relative;
+}
+
+main #form-sec .last-group .inputDate  .inputs {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 5px;
+
+}
+
+main #form-sec .last-group .inputDate  .inputs input {
+    margin-top: 5px;
+   width: 50%;
+}
+.inputCVC {
+    width: 50%;
+    position: relative;
+}
+
+.inputCVC input {
+    width: 100%;
+    margin-top: 5px;
+}
+#btn {
+    width: 100%;
+    background-color: var(--Very-dark-violet);
+    color: var(--White);
+    padding: 15px;
+    border-radius: 7px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+ .erorr {
+    font-size: 11px;
+    color: red !important;
+    margin-top: 5px;
+ }
+ #numErro,#dateErro,#CVCErro {
+    visibility: hidden;
+ }
+
+ .sucsses {
+    text-align: center;
+    display: none;
+ }
+
+ .sucsses > img {
+    margin-bottom: 10px;
+    width: 60px;
+ }
+
+ .sucsses > h2 {
+    color: var(--Very-dark-violet);
+    font-weight: 500;
+    margin-bottom: 10px;
+ }
+
+ .sucsses > p {
+    font-size: 14px;
+    color: var(--Dark-grayish-violet);
+    margin-bottom: 20px;
+ }
+
+ .sucsses > button {
+    width: 100%;
+    padding: 10px;
+    color: var(--Light-grayish-violet);
+    border: 0;
+    outline: 0;
+    background-color: var(--Very-dark-violet);
+    border-radius: 7px;
+    cursor: pointer;
+
+ }
